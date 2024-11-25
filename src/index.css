@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --udc-blue: #004A98;
+  --udc-light-blue: #0066CC;
+}
+
+body {
+  @apply bg-gray-100;
+}
+
+/* Markdown Styles */
+.prose pre {
+  @apply bg-gray-800 text-gray-100 p-3 rounded-lg overflow-x-auto;
+}
+
+.prose code {
+  @apply bg-gray-200 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-inherit;
+}
+
+.prose table {
+  @apply w-full border-collapse border border-gray-300;
+}
+
+.prose th,
+.prose td {
+  @apply border border-gray-300 px-4 py-2;
+}
+
+.prose th {
+  @apply bg-gray-100 font-semibold;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic text-gray-600;
+}
+
+.prose a {
+  @apply text-blue-600 no-underline hover:underline;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}

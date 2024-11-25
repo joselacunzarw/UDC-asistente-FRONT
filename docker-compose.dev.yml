@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: 
+      target: development
+    ports:
+      - "${DEV_PORT:-8081}:8081"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - VITE_MOCK_ENABLED=true
+      - VITE_DEV_TOOLS_ENABLED=true
+    command: npm run dev
