@@ -27,5 +27,4 @@ services:
 
 networks:
   udcito-net:
-    driver: bridge
     external: true
