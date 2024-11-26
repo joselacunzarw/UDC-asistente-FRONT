@@ -3,6 +3,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import { useAuthStore } from '../store/authStore';
 import { MessageSquare, ToggleLeft, ToggleRight } from 'lucide-react';
 import { jwtDecode } from 'jwt-decode';
+import config from '../config';
 
 interface GoogleCredentialResponse {
   credential: string;
@@ -34,16 +35,22 @@ export const LoginScreen: React.FC = () => {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
         <div className="flex items-center justify-center mb-8">
-          <div className="w-16 h-16 rounded-full bg-[#004A98] flex items-center justify-center">
-            <MessageSquare className="w-8 h-8 text-white" />
+          <div 
+            className="w-16 h-16 rounded-full flex items-center justify-center"
+            style={{ 
+              backgroundColor: config.branding.logo.backgroundColor,
+              color: config.branding.logo.textColor 
+            }}
+          >
+            <MessageSquare className="w-8 h-8" />
           </div>
         </div>
         
         <h1 className="text-2xl font-bold text-center text-gray-900 mb-2">
-          Bienvenido al Asistente UDC
+          Bienvenido a {config.branding.name}
         </h1>
         <p className="text-center text-gray-600 mb-8">
-          Universidad del Chubut
+          {config.branding.organization}
         </p>
 
         <div className="space-y-6">
